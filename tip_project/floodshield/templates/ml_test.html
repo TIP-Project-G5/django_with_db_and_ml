@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Test</title>
+</head>
+<body>
+    <h1>Machine Learning Test</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <button type="submit" name="get_predictions">Get Predictions</button>
+    </form>
+
+	{% if predictions %}
+        <h2>Flood Predictions</h2>
+        <div>{{ predictions | safe }}</div>
+    {% else %}
+        <p>No flood predictions available.</p>
+    {% endif %}
+</body>
+</html>
